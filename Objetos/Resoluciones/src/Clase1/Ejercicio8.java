@@ -12,35 +12,36 @@ import java.util.Scanner;
 public class Ejercicio8 {
 
     public static void main(String[] args) {
-        int dimColumna = 5;
-        int dimFila = 4;
-        int [][] restaurante = new int [dimColumna][dimFila];
-        int i, j;
+        int dimFila = 5; // 5 clientes
+        int dimColumna = 4; // 4 aspectos
+        int[][] restaurante = new int[dimFila][dimColumna];
         Scanner in = new Scanner(System.in);
-        System.out.println("Clasifique los aspectos según su código del 1 al 10: 0) Atención al cliente. 1) Calidad de la comida. 2) Precio. 3) Ambiente.");
         
-        for (i=0; i<dimColumna; i++)
-            for (j=0; j<dimFila; j++) {
-                System.out.println("Clasifique el aspecto : " + j);
-                restaurante [i][j]= in.nextInt();
+        System.out.println("Clasifique los aspectos del 1 al 10: 0) Atención al cliente 1) Calidad de la comida 2) Precio 3) Ambiente");
+        
+        for (int i = 0; i < dimFila; i++) {
+            System.out.println("Cliente " + (i + 1) + ":");
+            for (int j = 0; j < dimColumna; j++) {
+                System.out.print("Aspecto " + j + ": ");
+                restaurante[i][j] = in.nextInt();
             }
-        
-        for (i=0; i<dimColumna; i++) {
-             System.out.println("-------------");
-             for(j=0; j<dimFila; j++)
-                  System.out.print(restaurante[i][j] + " | ");
-        }     
-        
-        double [] promedio = new double [dimFila];
-        for (j=0; j<dimFila; j++) {
-            double prom = 0;
-            for(i=0; i<dimColumna; i++)
-                prom+= restaurante[i][j];
-            promedio[j] = prom/5;
         }
+        
+        // Calcular promedios
+        double[] promedio = new double[dimColumna];
+        for (int j = 0; j < dimColumna; j++) {
+            double suma = 0;
+            for (int i = 0; i < dimFila; i++) {
+                suma += restaurante[i][j];
+            }
+            promedio[j] = suma / dimFila;
+        }
+        
+        // Imprimir promedios
         System.out.println("-------------");
-        for (i=0; i<dimFila; i++)
-            System.out.println("El promedio del aspecto " + i+ " es: " + promedio[i]);
+        String[] aspectos = {"Atención al cliente", "Calidad de la comida", "Precio", "Ambiente"};
+        for (int j = 0; j < dimColumna; j++) {
+            System.out.println("Promedio de " + aspectos[j] + ": " + promedio[j]);
+        }
     }
-    
 }

@@ -33,6 +33,7 @@ public class Ejercicio5 {
         }
         //Paso 6: Calcular el promedio
         suma = (suma/dimF);
+        System.out.println("El promedio de altura es: " + suma);
         //Paso 7: Recorrer el vector, contar los números que son mayores que el promedio
         for (i = 0; i < dimF; i++) {
             if(vector[i] > suma) 
