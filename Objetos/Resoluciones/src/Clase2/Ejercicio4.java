@@ -47,23 +47,39 @@ public class Ejercicio4 {
            golVisitante = in.nextInt();
            vec[i] = new Partido(local, visitante, golLocal, golVisitante);
        }
-       
-       int cantGanadosRiver = 0, cantGolesBoca = 0, cantEmpates = 0;
-       
-       for(i = 0; i < DF; i++){
-           if(vec[i].hayEmpate())
-               cantEmpates++;
+    
+       System.out.println("River gano: " + partidosGanadosRiver(vec, DF) + " partidos y Boca metio: " + totalGolesBocaLocal(vec, DF) + " goles de Local");
+       System.out.println("El porcentaje de partidos finalizados con empate es: " + promEmpate(vec, DF) + "%");
+       in.close();
+    }
+    
+    public static int partidosGanadosRiver(Partido [] vec, int DF) {
+        int cantGanados = 0;
+        for(int i = 0; i < DF; i++){
            if(vec[i].getGanador().equals("River"))
-               cantGanadosRiver++;
+               cantGanados++;
+       }
+        return cantGanados;
+    }
+    
+    public static int totalGolesBocaLocal(Partido [] vec, int DF) {
+        int cantGolesBoca = 0;
+        for(int i = 0; i < DF; i++){
            if(vec[i].getLocal().equals("Boca"))
                cantGolesBoca += vec[i].getGolesLocal();
        }
-       
-       double prom = (double) cantEmpates/DF*100.0;
-    
-       System.out.println("River gano: " + cantGanadosRiver + " partidos y Boca metio: " + cantGolesBoca + " goles de Local");
-       System.out.println("El porcentaje de partidos finalizados con empate es: " + prom + "%");
-       in.close();
+        return cantGolesBoca;
     }
+    
+    public static double promEmpate(Partido [] vec, int DF) {
+        int cantEmpates = 0;
+        for(int i = 0; i < DF; i++){
+           if(vec[i].hayEmpate())
+               cantEmpates++;
+       }
+        return (double)cantEmpates / DF * 100.0;
+    }
+    
+    
     
 }

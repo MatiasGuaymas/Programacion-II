@@ -29,18 +29,30 @@ public class Ejercicio2 {
             vecPersona[i] = new Persona(nombre, dni, edad);
         }
 
+        System.out.println("CANT PERSONAS MAYORES DE 65 ANIOS: " + mayores65(vecPersona, DF));
+        System.out.println(menorPersonaDNI(vecPersona, DF).toString());
+        in.close();
+    }
+    
+    public static int mayores65(Persona[] vecPersona, int DF) {
         int contador = 0;
-        int min = 999;
-        Persona menor = null;
-        for (i = 0; i < DF; i ++) {
+        for (int i = 0; i < DF; i++) {
             if(vecPersona[i].getEdad() > 65)
                 contador++;
+        }
+        return contador;
+    }
+    
+    public static Persona menorPersonaDNI(Persona[] vecPersona, int DF) {
+        int min = 999;
+        Persona menor = null;
+        for (int i = 0; i < DF; i++) {
             if(vecPersona[i].getDNI() < min) {
                 min = vecPersona[i].getDNI();
                 menor = vecPersona[i];
-        }}
-        System.out.println("CANT PERSONAS MAYORES DE 65 ANIOS: " + contador);
-        System.out.println(menor.toString());
-        in.close();
+            }
+        }
+        return menor;
     }
 }
+
