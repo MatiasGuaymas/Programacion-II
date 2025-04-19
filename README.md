@@ -15,7 +15,7 @@
 
 ### Objetos
 * [**01-Introducción**](https://github.com/MatiasGuaymas/Programacion-II/tree/main/Objetos/Resoluciones/src/Clase1)
-* [**01-Objetos&Clases**](https://github.com/MatiasGuaymas/Programacion-II/tree/main/Objetos/Resoluciones/src/Clase2)
+* [**02-Objetos&Clases**](https://github.com/MatiasGuaymas/Programacion-II/tree/main/Objetos/Resoluciones/src/Clase2)
 
 ## Cómo contribuir
 * Darle estrella (Star) al repositorio.
