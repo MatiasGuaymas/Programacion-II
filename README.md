@@ -14,7 +14,8 @@
 * [**07-Repaso**](https://github.com/MatiasGuaymas/Programacion-II/tree/main/Imperativo/07-Repaso)
 
 ### Objetos
-* [**01-Introducción**](https://github.com/MatiasGuaymas/Programacion-II/tree/main/Imperativo/01-RepasoListas)
+* [**01-Introducción**](https://github.com/MatiasGuaymas/Programacion-II/tree/main/Objetos/Resoluciones/src/Clase1)
+* [**01-Objetos&Clases**](https://github.com/MatiasGuaymas/Programacion-II/tree/main/Objetos/Resoluciones/src/Clase2)
 
 ## Cómo contribuir
 * Darle estrella (Star) al repositorio.
